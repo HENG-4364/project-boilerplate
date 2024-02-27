@@ -1,4 +1,5 @@
 import LoginScreen from '@/screen/Login/LoginScreen'
+import { Metadata } from 'next'
 import React from 'react'
 
 const LoginPage = () => {
@@ -10,3 +11,8 @@ const LoginPage = () => {
 }
 
 export default LoginPage
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  return {
+    title: `Login | PhotoLand`,
+  };
+}

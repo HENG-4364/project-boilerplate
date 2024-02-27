@@ -72,13 +72,13 @@ const AppNavbar = () => {
                     </div>
                     <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 text-black">
                       <li>
-                        <a className="justify-between">
+                        <Link className="justify-between" href={'#'}>
                           Profile
                           <span className="badge">New</span>
-                        </a>
+                        </Link>
                       </li>
-                      <li><a>Settings</a></li>
-                      <li><a onClick={handleLogout}>Logout</a></li>
+                      <li><Link href={'/setting'}>Settings</Link></li>
+                      <li><Link onClick={handleLogout} href={'#'}>Logout</Link></li>
                     </ul>
                   </div>
                 </div>

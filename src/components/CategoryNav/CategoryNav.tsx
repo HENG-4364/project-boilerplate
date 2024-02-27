@@ -8,23 +8,30 @@ const CategoryNav = () => {
                 <div className='bg-accent py-4 uppercase font-semibold flex items-center justify-center text-primary'>Browse Categories</div>
                 <div className='flex flex-col gap-y-6 p-6'>
                     <Link href={''} >
-                        Category
+                        Canon
                     </Link>
                     <Link href={''} >
-                        Category
+                        Nikon
                     </Link>
                     <Link href={''} >
-                        Category
+                        Sony
                     </Link>
                     <Link href={''} >
-                        Category
+                        Fujifilm
                     </Link>
                     <Link href={''} >
-                        Category
+                        Panasonic
                     </Link>
                     <Link href={''} >
-                        Category
+                        Olympus
                     </Link>
+                    <Link href={''} >
+                        Pentax
+                    </Link>                        
+                    <Link href={''} >
+                        GoPro
+                    </Link>
+
                 </div>
             </div>
         </aside>
