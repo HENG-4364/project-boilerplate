@@ -109,7 +109,7 @@ const AppNavbar = () => {
       <div className='bg-accent xl:mb-[30px] '>
         <div className='container mx-auto flex text-black'>
           <div className=' text-lg hover:bg-accent-hover c'>
-            <Link href={''} className='flex items-center py-3 px-5'>
+            <Link href={''} className='flex items-center py-2 px-5'>
               Products <i className="fa-solid fa-chevron-down ml-1 text-base"></i>
             </Link>
             <div className="dropdown-content grad">
@@ -119,7 +119,7 @@ const AppNavbar = () => {
             </div>
           </div>
           <div className='text-lg hover:bg-accent-hover c'>
-            <Link href={''} className='flex items-center py-3 px-5 '>
+            <Link href={''} className='flex items-center py-2 px-5 '>
               Accessories  <i className="fa-solid fa-chevron-down ml-1 text-base"></i>
             </Link>
             <div className="dropdown-content grad">
@@ -129,7 +129,7 @@ const AppNavbar = () => {
             </div>
           </div>
           <div className=' text-lg hover:bg-accent-hover c'>
-            <Link href={''} className='flex items-center px-5 py-3 '>
+            <Link href={''} className='flex items-center px-5 py-2 '>
               Secondhand  <i className="fa-solid fa-chevron-down ml-1 text-base"></i>
             </Link>
             <div className="dropdown-content grad">
@@ -139,7 +139,7 @@ const AppNavbar = () => {
             </div>
           </div>
           <div className=' text-lg hover:bg-accent-hover'>
-            <Link href={''} className='flex items-center px-5 py-3 '>
+            <Link href={''} className='flex items-center px-5 py-2'>
               Contact us
             </Link>
           </div>
