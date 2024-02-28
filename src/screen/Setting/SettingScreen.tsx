@@ -1,10 +1,10 @@
 import React from 'react'
-
+import "./setting.scss"
 const SettingScreen = () => {
   return (
-    <div>
-      dffdsfsd
-    </div>
+    <>
+      
+    </>
   )
 }
 
