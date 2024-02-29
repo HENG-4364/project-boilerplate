@@ -6,7 +6,7 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 100;
 
-  a {
+  .sub_menu {
     float: none;
     color: white;
     padding: 12px 16px;
@@ -15,7 +15,7 @@
     text-align: left;
 
     &:hover {
-      color:black;
+      color: black;
     }
   }
 }

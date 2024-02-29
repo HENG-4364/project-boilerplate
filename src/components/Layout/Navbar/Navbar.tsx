@@ -5,23 +5,18 @@ import { CartContext } from '@/context/CartContext/CartContext'
 import { useContextMe } from '@/context/MeEmployee/EmployeeContext'
 import Link from 'next/link'
 import React, { useContext, useState } from 'react'
-import Cookies from "js-cookie"
 import "./navbar.scss"
 const AppNavbar = () => {
   const { isOpen, setIsOpen, itemsAmount } = useContext(CartContext);
   const [catNavMobile, setCatNavMobile] = useState(false);
   const [isShowBtnSearch, setIsShowBtnSearch] = useState(false);
   const { me } = useContextMe()
-  const handleLogout = () => {
-    Cookies.remove("token");
-    window.location.replace("/");
-  };
-
+  
   return (
     <>
       <header className='bg-primary py-6 fixed w-full top-0 z-40 lg:relative '>
-        <div className='container mx-auto'>
-          <div className='flex flex-row gap-4 lg:items-center justify-between mb-4 xl:mb-0'>
+        <div className='container mx-auto '>
+          <div className='flex flex-row gap-4 items-center justify-between mb-4 xl:mb-0'>
             {/* Menu */}
             <div className='xl:hidden'>
               <i onClick={() => setCatNavMobile(true)} className="fa-solid fa-bars text-3xl  cursor-pointer"></i>
@@ -50,9 +45,7 @@ const AppNavbar = () => {
               </div>
               {/* cart */}
               <div onClick={() => setIsOpen(!isOpen)} className='relative cursor-pointer'>
-                {/* cart icon */}
                 <i className="fa-solid fa-bag-shopping text-2xl"></i>
-                {/* amount */}
                 <div className='bg-accent text-primary absolute w-[18px] h-[18px] rounded-full top-3 -right-1 text-[13px] flex justify-center items-center font-bold tracking-[-0.1em]'>{itemsAmount}</div>
               </div>
               {/* cart */}
@@ -64,25 +57,15 @@ const AppNavbar = () => {
               {/* Profile */}
               {
                 me ? (<>
-                  <div className='ms-5'>
-                    <div className="dropdown dropdown-end">
+                  <Link href={'/profile'}>
+                    <div className='ms-5' >
                       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                           <img alt="Tailwind CSS Navbar component" src={me?.profile ? me?.profile : "https://surgassociates.com/wp-content/uploads/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.jpg"} />
                         </div>
                       </div>
-                      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 text-black">
-                        <li>
-                          <Link className="justify-between" href={'#'}>
-                            Profile
-                            <span className="badge">New</span>
-                          </Link>
-                        </li>
-                        <li><Link href={'/setting'}>Settings</Link></li>
-                        <li><Link onClick={handleLogout} href={'#'}>Logout</Link></li>
-                      </ul>
                     </div>
-                  </div>
+                  </Link>
                 </>
                 ) : (
                   <>
@@ -106,16 +89,16 @@ const AppNavbar = () => {
         </div>
 
       </header >
-      <div className='bg-accent xl:mb-[30px] '>
+      <div className='hidden xl:block bg-accent xl:mb-[30px] '>
         <div className='container mx-auto flex text-black'>
           <div className=' text-lg hover:bg-accent-hover c'>
             <Link href={''} className='flex items-center py-2 px-5'>
               Products <i className="fa-solid fa-chevron-down ml-1 text-base"></i>
             </Link>
             <div className="dropdown-content grad">
-              <a href="#" className='hover:bg-accent-hover'>Link 1</a>
-              <a href="#" className='hover:bg-accent-hover'>Link 2</a>
-              <a href="#" className='hover:bg-accent-hover'>Link 3</a>
+              <Link href="/products" className=' sub_menu hover:bg-accent-hover'>All Products</Link>
+              <Link href="#" className='sub_menu hover:bg-accent-hover'>Link 2</Link>
+              <Link href="#" className='sub_menu hover:bg-accent-hover'>Link 3</Link>
             </div>
           </div>
           <div className='text-lg hover:bg-accent-hover c'>
@@ -123,9 +106,9 @@ const AppNavbar = () => {
               Accessories  <i className="fa-solid fa-chevron-down ml-1 text-base"></i>
             </Link>
             <div className="dropdown-content grad">
-              <a href="#" className='hover:bg-accent-hover'>Link 1</a>
-              <a href="#" className='hover:bg-accent-hover'>Link 2</a>
-              <a href="#" className='hover:bg-accent-hover'>Link 3</a>
+              <Link href="#" className='sub_menu hover:bg-accent-hover'>Link 1</Link>
+              <Link href="#" className='sub_menu hover:bg-accent-hover'>Link 2</Link>
+              <Link href="#" className='sub_menu hover:bg-accent-hover'>Link 3</Link>
             </div>
           </div>
           <div className=' text-lg hover:bg-accent-hover c'>
@@ -133,9 +116,9 @@ const AppNavbar = () => {
               Secondhand  <i className="fa-solid fa-chevron-down ml-1 text-base"></i>
             </Link>
             <div className="dropdown-content grad">
-              <a href="#" className='hover:bg-accent-hover'>Link 1</a>
-              <a href="#" className='hover:bg-accent-hover'>Link 2</a>
-              <a href="#" className='hover:bg-accent-hover'>Link 3</a>
+              <Link href="#" className='sub_menu hover:bg-accent-hover'>Link 1</Link>
+              <Link href="#" className='sub_menu hover:bg-accent-hover'>Link 2</Link>
+              <Link href="#" className='sub_menu hover:bg-accent-hover'>Link 3</Link>
             </div>
           </div>
           <div className=' text-lg hover:bg-accent-hover'>
